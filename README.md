@@ -19,6 +19,7 @@ This project implements the **RSA encryption algorithm** on an **8051 microcontr
 
 ## **Technologies Used**  
 - **C Programming** for embedded system development.  
-- **Keil uVision** for coding and simulation.  
+- **Keil uVision** for coding.
+- **Protues** for simulation.  
 - **RSA Algorithm** for cryptographic security.  
 
