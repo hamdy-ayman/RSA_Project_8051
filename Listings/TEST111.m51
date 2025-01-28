@@ -1,0 +1,427 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    01/28/2025  20:38:55  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\TEST111 PRINT (.\Listings\TEST111.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CLDOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?CSTOPTR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?IMUL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?SIDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?LMUL)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULDIV)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULCMP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?ULSHR)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?UIDIV)
+
+
+LINK MAP OF MODULE:  .\Objects\TEST111 (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     001EH     UNIT         ?DT?MAIN
+            DATA    0026H     0018H     UNIT         _DATA_GROUP_
+            IDATA   003EH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     0246H     UNIT         ?C?LIB_CODE
+            CODE    0A46H     013BH     UNIT         ?PR?MAIN?MAIN
+            CODE    0B81H     0136H     UNIT         ?PR?_INTTOASCII?MAIN
+            CODE    0CB7H     0098H     UNIT         ?PR?_SQUARE_MUL?MAIN
+            CODE    0D4FH     008EH     UNIT         ?PR?_EXTENDED_ECULDIAN_ALGORTHIM?MAIN
+            CODE    0DDDH     006BH     UNIT         ?CO?MAIN
+            CODE    0E48H     0064H     UNIT         ?PR?UART_RECEIVENUMBER?MAIN
+            CODE    0EACH     005AH     UNIT         ?PR?_PRIMALITY_TEST?MAIN
+            CODE    0F06H     0053H     UNIT         ?PR?_GCD?MAIN
+            CODE    0F59H     002BH     UNIT         ?PR?_ENCRYPTION_DECRYPTION?MAIN
+            CODE    0F84H     002BH     UNIT         ?PR?_UART_SENDSTRING?MAIN
+            CODE    0FAFH     000CH     UNIT         ?PR?SERIAL_INIT?MAIN
+            CODE    0FBBH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0FC7H     000AH     UNIT         ?PR?_SEND_DATA_SERIAL?MAIN
+            CODE    0FD1H     0008H     UNIT         ?PR?RECIVE_DATA_SERIAL?MAIN
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\TEST111 (MAIN)
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/28/2025  20:38:55  PAGE 2
+
+
+SEGMENT                                         DATA_GROUP 
+  +--> CALLED SEGMENT                         START    LENGTH
+-------------------------------------------------------------
+?C_C51STARTUP                                 -----    -----
+  +--> ?PR?MAIN?MAIN
+
+?PR?MAIN?MAIN                                 -----    -----
+  +--> ?PR?SERIAL_INIT?MAIN
+  +--> ?CO?MAIN
+  +--> ?PR?_UART_SENDSTRING?MAIN
+  +--> ?PR?UART_RECEIVENUMBER?MAIN
+  +--> ?PR?_PRIMALITY_TEST?MAIN
+  +--> ?PR?_GCD?MAIN
+  +--> ?PR?_EXTENDED_ECULDIAN_ALGORTHIM?MAIN
+  +--> ?PR?_ENCRYPTION_DECRYPTION?MAIN
+  +--> ?PR?_INTTOASCII?MAIN
+
+?PR?_UART_SENDSTRING?MAIN                     0026H    0003H
+  +--> ?PR?_SEND_DATA_SERIAL?MAIN
+
+?PR?UART_RECEIVENUMBER?MAIN                   0026H    000AH
+  +--> ?PR?RECIVE_DATA_SERIAL?MAIN
+
+?PR?_PRIMALITY_TEST?MAIN                      0026H    0005H
+  +--> ?PR?_SQUARE_MUL?MAIN
+
+?PR?_SQUARE_MUL?MAIN                          0030H    000EH
+
+?PR?_GCD?MAIN                                 0026H    000AH
+
+?PR?_EXTENDED_ECULDIAN_ALGORTHIM?MAIN         0026H    000EH
+
+?PR?_ENCRYPTION_DECRYPTION?MAIN               0026H    000AH
+  +--> ?PR?_SQUARE_MUL?MAIN
+
+?PR?_INTTOASCII?MAIN                          0026H    000AH
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\TEST111 (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:0EACH         PUBLIC        _primality_test
+  C:0FC7H         PUBLIC        _send_data_serial
+  D:0008H         PUBLIC        public_key_check
+  C:0FAFH         PUBLIC        serial_init
+  B:0098H.0       PUBLIC        RI
+  B:0098H.1       PUBLIC        TI
+  D:0009H         PUBLIC        cipher_plain_text
+  C:0F8AH         PUBLIC        _UART_SendString
+  C:0A46H         PUBLIC        main
+  D:000BH         PUBLIC        private_key
+  D:000FH         PUBLIC        public_key
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/28/2025  20:38:55  PAGE 3
+
+
+  C:0F06H         PUBLIC        _gcd
+  D:0099H         PUBLIC        SBUF
+  D:0098H         PUBLIC        SCON
+  D:0013H         PUBLIC        co_prime_check
+  D:0089H         PUBLIC        TMOD
+  D:0014H         PUBLIC        temp
+  C:0F59H         PUBLIC        _Encryption_Decryption
+  D:001AH         PUBLIC        phi
+  C:0CB7H         PUBLIC        _square_mul
+  D:008DH         PUBLIC        TH1
+  C:0D4FH         PUBLIC        _Extended_Eculdian_Algorthim
+  C:0E48H         PUBLIC        UART_ReceiveNumber
+  B:0088H.6       PUBLIC        TR1
+  C:0FD1H         PUBLIC        recive_data_serial
+  D:001EH         PUBLIC        n
+  D:0022H         PUBLIC        p
+  D:0024H         PUBLIC        q
+  C:0B8DH         PUBLIC        _intToASCII
+  -------         PROC          MAIN
+  C:0A46H         LINE#         26
+  C:0A46H         LINE#         27
+  C:0A49H         LINE#         28
+  C:0A49H         LINE#         30
+  C:0A49H         LINE#         31
+  C:0A52H         LINE#         32
+  C:0A59H         LINE#         34
+  C:0A62H         LINE#         35
+  C:0A69H         LINE#         36
+  C:0A7AH         LINE#         37
+  C:0A7DH         LINE#         38
+  C:0A80H         LINE#         40
+  C:0AA0H         LINE#         41
+  C:0AB4H         LINE#         44
+  C:0AB4H         LINE#         45
+  C:0ABDH         LINE#         46
+  C:0AC8H         LINE#         47
+  C:0ADDH         LINE#         48
+  C:0AE2H         LINE#         49
+  C:0AE5H         LINE#         51
+  C:0AEEH         LINE#         52
+  C:0AF5H         LINE#         54
+  C:0B14H         LINE#         56
+  C:0B31H         LINE#         57
+  C:0B34H         LINE#         58
+  C:0B3DH         LINE#         59
+  C:0B40H         LINE#         60
+  C:0B49H         LINE#         62
+  C:0B66H         LINE#         63
+  C:0B69H         LINE#         64
+  C:0B72H         LINE#         65
+  C:0B75H         LINE#         66
+  C:0B7EH         LINE#         68
+  -------         ENDPROC       MAIN
+  -------         PROC          _PRIMALITY_TEST
+  D:0026H         SYMBOL        prime_candidate
+  -------         DO            
+  D:0028H         SYMBOL        a
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/28/2025  20:38:55  PAGE 4
+
+
+  D:0006H         SYMBOL        reminder
+  D:0029H         SYMBOL        i
+  D:002AH         SYMBOL        security_test
+  -------         ENDDO         
+  C:0EACH         LINE#         73
+  C:0EB0H         LINE#         74
+  C:0EB0H         LINE#         75
+  C:0EB3H         LINE#         76
+  C:0EB3H         LINE#         79
+  C:0EB6H         LINE#         80
+  C:0EB8H         LINE#         81
+  C:0EB8H         LINE#         82
+  C:0EE6H         LINE#         83
+  C:0EECH         LINE#         84
+  C:0EECH         LINE#         85
+  C:0EEEH         LINE#         86
+  C:0EF0H         LINE#         87
+  C:0EF0H         LINE#         89
+  C:0EF0H         LINE#         90
+  C:0EF0H         LINE#         91
+  C:0EF0H         LINE#         92
+  C:0EF9H         LINE#         93
+  C:0F00H         LINE#         94
+  C:0F00H         LINE#         95
+  C:0F03H         LINE#         96
+  C:0F03H         LINE#         98
+  C:0F03H         LINE#         99
+  C:0F05H         LINE#         100
+  C:0F05H         LINE#         101
+  -------         ENDPROC       _PRIMALITY_TEST
+  -------         PROC          _SQUARE_MUL
+  D:0030H         SYMBOL        number
+  D:0034H         SYMBOL        m
+  D:0038H         SYMBOL        power
+  -------         DO            
+  D:003CH         SYMBOL        result
+  -------         ENDDO         
+  C:0CB7H         LINE#         103
+  C:0CBFH         LINE#         104
+  C:0CC5H         LINE#         105
+  C:0CD3H         LINE#         106
+  C:0D01H         LINE#         107
+  C:0D2FH         LINE#         108
+  C:0D44H         LINE#         109
+  C:0D47H         LINE#         110
+  C:0D4EH         LINE#         111
+  -------         ENDPROC       _SQUARE_MUL
+  -------         PROC          _EXTENDED_ECULDIAN_ALGORTHIM
+  D:0026H         SYMBOL        phi
+  D:002AH         SYMBOL        e
+  -------         DO            
+  D:002EH         SYMBOL        r1
+  D:0002H         SYMBOL        r2
+  D:0082H         SYMBOL        t1
+  D:0030H         SYMBOL        t2
+  D:0004H         SYMBOL        temp
+  -------         DO            
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/28/2025  20:38:55  PAGE 5
+
+
+  D:0032H         SYMBOL        q
+  -------         ENDDO         
+  -------         ENDDO         
+  C:0D4FH         LINE#         117
+  C:0D57H         LINE#         120
+  C:0D68H         LINE#         121
+  C:0D6CH         LINE#         122
+  C:0D7BH         LINE#         123
+  C:0D86H         LINE#         124
+  C:0D8AH         LINE#         125
+  C:0D8EH         LINE#         127
+  C:0DA2H         LINE#         128
+  C:0DA8H         LINE#         129
+  C:0DACH         LINE#         130
+  C:0DAEH         LINE#         131
+  C:0DDCH         LINE#         132
+  -------         ENDPROC       _EXTENDED_ECULDIAN_ALGORTHIM
+  -------         PROC          _ENCRYPTION_DECRYPTION
+  D:0026H         SYMBOL        public_private_key
+  D:002AH         SYMBOL        n
+  D:002EH         SYMBOL        plain_cipher_text
+  -------         DO            
+  D:0004H         SYMBOL        result
+  -------         ENDDO         
+  C:0F59H         LINE#         135
+  C:0F61H         LINE#         137
+  C:0F65H         LINE#         139
+  -------         ENDPROC       _ENCRYPTION_DECRYPTION
+  -------         PROC          _GCD
+  D:0026H         SYMBOL        n1
+  D:002AH         SYMBOL        n2
+  -------         DO            
+  D:002EH         SYMBOL        temp
+  -------         ENDDO         
+  C:0F06H         LINE#         145
+  C:0F0EH         LINE#         146
+  C:0F0EH         LINE#         147
+  C:0F1CH         LINE#         148
+  C:0F20H         LINE#         149
+  C:0F43H         LINE#         150
+  C:0F4EH         LINE#         151
+  C:0F50H         LINE#         152
+  C:0F58H         LINE#         153
+  -------         ENDPROC       _GCD
+  -------         PROC          SERIAL_INIT
+  C:0FAFH         LINE#         157
+  C:0FAFH         LINE#         158
+  C:0FBAH         LINE#         159
+  -------         ENDPROC       SERIAL_INIT
+  -------         PROC          _SEND_DATA_SERIAL
+  D:0007H         SYMBOL        data_t
+  C:0FC7H         LINE#         161
+  C:0FC7H         LINE#         162
+  C:0FC9H         LINE#         163
+  C:0FCBH         LINE#         164
+  C:0FCEH         LINE#         165
+  C:0FD0H         LINE#         166
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/28/2025  20:38:55  PAGE 6
+
+
+  -------         ENDPROC       _SEND_DATA_SERIAL
+  -------         PROC          RECIVE_DATA_SERIAL
+  C:0FD1H         LINE#         168
+  C:0FD1H         LINE#         169
+  C:0FD4H         LINE#         170
+  C:0FD6H         LINE#         171
+  C:0FD8H         LINE#         172
+  -------         ENDPROC       RECIVE_DATA_SERIAL
+  -------         PROC          L?0059
+  -------         ENDPROC       L?0059
+  -------         PROC          _UART_SENDSTRING
+  D:0026H         SYMBOL        str
+  C:0F8AH         LINE#         174
+  C:0F90H         LINE#         175
+  C:0FAEH         LINE#         176
+  -------         ENDPROC       _UART_SENDSTRING
+  -------         PROC          UART_RECEIVENUMBER
+  -------         DO            
+  D:0026H         SYMBOL        buffer
+  D:0007H         SYMBOL        c
+  D:0006H         SYMBOL        index
+  D:0002H         SYMBOL        number
+  D:0001H         SYMBOL        i
+  -------         ENDDO         
+  C:0E48H         LINE#         178
+  C:0E48H         LINE#         181
+  C:0E4AH         LINE#         182
+  C:0E4CH         LINE#         184
+  C:0E4CH         LINE#         185
+  C:0E4FH         LINE#         186
+  C:0E54H         LINE#         187
+  C:0E65H         LINE#         188
+  C:0E67H         LINE#         190
+  C:0E6DH         LINE#         193
+  C:0E7FH         LINE#         194
+  C:0EA1H         LINE#         195
+  C:0EA4H         LINE#         197
+  C:0EABH         LINE#         198
+  -------         ENDPROC       UART_RECEIVENUMBER
+  -------         PROC          L?0058
+  -------         ENDPROC       L?0058
+  -------         PROC          _INTTOASCII
+  D:0026H         SYMBOL        number
+  D:002AH         SYMBOL        asciiString
+  -------         DO            
+  D:002DH         SYMBOL        index
+  D:002EH         SYMBOL        i
+  -------         DO            
+  D:002FH         SYMBOL        temp
+  -------         ENDDO         
+  -------         ENDDO         
+  C:0B8DH         LINE#         200
+  C:0B9BH         LINE#         201
+  C:0B9EH         LINE#         202
+  C:0BA0H         LINE#         203
+  C:0BB2H         LINE#         204
+  C:0BC9H         LINE#         205
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/28/2025  20:38:55  PAGE 7
+
+
+  C:0BCCH         LINE#         207
+  C:0BDFH         LINE#         208
+  C:0C0BH         LINE#         209
+  C:0C24H         LINE#         210
+  C:0C26H         LINE#         213
+  C:0C39H         LINE#         214
+  C:0C4EH         LINE#         215
+  C:0C7CH         LINE#         216
+  C:0C9FH         LINE#         217
+  C:0CA3H         LINE#         218
+  C:0CA3H         LINE#         220
+  -------         ENDPROC       _INTTOASCII
+  -------         ENDMOD        MAIN
+
+  -------         MODULE        ?C?CLDPTR
+  C:0800H         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+  -------         MODULE        ?C?CLDOPTR
+  C:0819H         PUBLIC        ?C?CLDOPTR
+  -------         ENDMOD        ?C?CLDOPTR
+
+  -------         MODULE        ?C?CSTOPTR
+  C:0846H         PUBLIC        ?C?CSTOPTR
+  -------         ENDMOD        ?C?CSTOPTR
+
+  -------         MODULE        ?C?IMUL
+  C:0868H         PUBLIC        ?C?IMUL
+  -------         ENDMOD        ?C?IMUL
+
+  -------         MODULE        ?C?SIDIV
+  C:087AH         PUBLIC        ?C?SIDIV
+  -------         ENDMOD        ?C?SIDIV
+
+  -------         MODULE        ?C?LMUL
+  C:08B0H         PUBLIC        ?C?LMUL
+  -------         ENDMOD        ?C?LMUL
+
+  -------         MODULE        ?C?ULDIV
+  C:093BH         PUBLIC        ?C?ULDIV
+  -------         ENDMOD        ?C?ULDIV
+
+  -------         MODULE        ?C?ULCMP
+  C:09CDH         PUBLIC        ?C?ULCMP
+  -------         ENDMOD        ?C?ULCMP
+
+  -------         MODULE        ?C?ULSHR
+  C:09DEH         PUBLIC        ?C?ULSHR
+  -------         ENDMOD        ?C?ULSHR
+
+  -------         MODULE        ?C?UIDIV
+  C:09F1H         PUBLIC        ?C?UIDIV
+  -------         ENDMOD        ?C?UIDIV
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0587H BYTE (69%) *
+******************************************************************************
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  01/28/2025  20:38:55  PAGE 8
+
+
+
+Program Size: data=63.0 xdata=0 code=2012
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
